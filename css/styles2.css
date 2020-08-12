@@ -1,0 +1,118 @@
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content {
+    margin: 0px;
+    padding: 50px 0px 50px 0px;
+    min-height: 400px;
+}
+
+.navbar{
+    background-color: black;
+}
+
+.card-header{
+    background-color:grey;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+
+.btn {
+    margin: auto;
+    padding: auto;
+    background-color: white;
+}
+
+table.GeneratedTable {
+    width: 75%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #ff4c00;
+    border-style: solid;
+    color: #000000;
+  }
+  
+  table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: #ff4c00;
+    border-style: solid;
+    padding: 3px;
+  }
+  
+  table.GeneratedTable thead {
+    background-color: #ff4c00;
+  }
+  .topnav-right {
+      float: right;
+    }
+
+
+.dropdown   {
+    position: relative;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: lightsalmon;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: lightyellow;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+  .sidenav {
+    height: 100%;
+    width: 319px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #eb4326 ;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+   h2
+   {
+    color: white;
+    text-align: center;
+    margin: 30px auto;
+   }
+
+   h3{
+       color:black;
+       text-align: center;
+   }
