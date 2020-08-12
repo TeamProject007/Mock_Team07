@@ -295,3 +295,15 @@ button{
   display: block;
   margin:0 auto;;
 }
+.signup-form{
+	margin: auto;
+  width: 50%;
+  padding: 10px;
+  transform: translate(0, 90%);
+}
+.signin-form{
+  margin: 150px 70px;
+  width: 50%;
+  padding: 10px;
+  transform: translate(0, 90%);
+}
