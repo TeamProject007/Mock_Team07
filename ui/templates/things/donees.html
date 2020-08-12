@@ -1,0 +1,16 @@
+{% extends 'things/base.html' %}
+{% load static %}
+    {% block body %}
+    {% for req in req_list %}
+    <div class="row">
+      <div class="col-md-4">
+        <h3>{{ req.requirement_name }}</h3>
+        <h5>{{ req.requirement_desc }}</h5>
+        <h6>{{ req.requirement_quantity }}</h6>
+      </div>
+      <div class="col-md-2">
+        <a href="{% url 'things:detaild' req.id %}" class="btn btn-success">Details</a>
+      </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

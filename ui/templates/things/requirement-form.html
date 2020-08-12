@@ -1,0 +1,8 @@
+{% extends 'things/base.html' %}
+{% block body %}
+<form method="POST">
+  {% csrf_token %}
+  {{ req_form.as_p }}
+  <button type="Submit">Save</button>
+</form>
+{% endblock %}
