@@ -1,3 +1,4 @@
+{% extends 'things/base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -16,19 +17,17 @@
        <a class="nav-item nav-link" href="{% url 'things:registerd' %}">Register for Donee</a>
        <a class="nav-item nav-link" href="{% url 'things:item' %}">Donations</a>
        <a class="nav-item nav-link" href="{% url 'things:req'  %}">Requirements</a>
+       {% if user.is_authenticated or userd.is_authenticated %}
+       <a class="nav-item navbar-link" href="{% url 'logout' %}">Logout</a>
+       {% else %}
+       <a class="navbar-link nav-item" href="{% url 'things:user_login' %}">Login</a>
+       {% endif %}
        {% if user.is_authenticated %}
        <a class="nav-item nav-link" href="{% url 'things:create_item' %}">Add Item</a>
        {% endif %}
        {% if userd.is_authenticated %}
        <a class="nav-item nav-link" href="{% url 'things:add_item' %}">Requirement Item</a>
        {% endif %}
-       <span class="navbar-text">
-       {% if user.is_authenticated or userd.is_authenticated %}
-       <a class="nav-item navbar-link" href="{% url 'logout' %}">Logout</a>
-       {% else %}
-       <a class="navbar-link nav-item" href="{% url 'things:user_login' %}">Login</a>
-       {% endif %}
-       </span>
      </div>
    </nav>
 
@@ -36,7 +35,6 @@
    {% block body_block %}
    {% endblock %}
    </div>
-   {% load static %}
    {% block content %}
    <!DOCTYPE html>
    <html lang="en">
@@ -221,7 +219,24 @@
    </head>
 
    <body>
-
+     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+         <div class="container">
+           <button class="navbar-toggler" type="botton" data-toggle="collapse" data-target=#navbar>
+             <span class="navbar-toggler-icon"></span>
+           </button>
+           <a class="navbar-brand mr-auto" href="{% url 'index' %}"><img src="{% static 'images/logo.jpg' %}" height="30" width="41"></a>
+           <div class="collapse navbar-collapse" id="navbar">
+             <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                 <li class="nav-item"><a class="nav-link" href="{% url 'things:about' %}"><span class="fa fa-picture-o fa-lg"></span> Gallery</a></li>
+             </ul>
+             <span class="navbar-text">
+                 <a id="loginModalOpen" href="{% url 'things:user_login' %}" role="button">
+                 <span class="fa fa-sign-in"></span> Login</a>
+               </span>
+           </div>
+         </div>
+       </nav>
        <div class="container">
          <div class="main-head">
            <h1>A little help, can go a long way....</h1>
@@ -265,24 +280,24 @@
    {% endblock %}
 
 
-   </body>
-   </html>
-   {% block body %}
-   {% for item in item_list %}
-   <div class="row">
-   <div class="col-md-3 offset-md-2">
+  </body>
+</html>
+{% block body %}
+{% for item in item_list %}
+<div class="row">
+  <div class="col-md-3 offset-md-2">
     <img src="{{ item.item_image }}" class="card" height="150px" alt="">
-   </div>
-   <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
     <h3>{{ item.item_name }}</h3>
     <h5>{{ item.item_desc }}</h5>
     <h6>{{ item.item_quantity }}</h6>
-   </div>
-   <div class="col-md-2">
+  </div>
+  <div class="col-md-2">
     <a href="{% url 'things:detail' item.id %}" class="btn btn-success">Details</a>
-   </div>
-   </div>
-   {% endfor %}
+  </div>
+</div>
+{% endfor %}
 
     {% for req in req_list %}
     <div class="row">
@@ -295,9 +310,5 @@
         <a href="{% url 'things:detaild' req.id %}" class="btn btn-success">Details</a>
       </div>
     </div>
-   {% endfor %}
-   {% endblock %}
-
-
-  </body>
-</html>
+{% endfor %}
+{% endblock %}

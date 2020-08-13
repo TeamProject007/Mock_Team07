@@ -1,4 +1,4 @@
-{% extends 'things/base.html' %}
+{% extends 'things/base.html'%}
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
@@ -242,4 +242,38 @@ body{
     </div>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
+{% endblock %}
+
+
+</body>
+</html>
+{% block body %}
+{% for item in item_list %}
+<div class="row">
+<div class="col-md-3 offset-md-2">
+ <img src="{{ item.item_image }}" class="card" height="150px" alt="">
+</div>
+<div class="col-md-4">
+ <h3>{{ item.item_name }}</h3>
+ <h5>{{ item.item_desc }}</h5>
+ <h6>{{ item.item_quantity }}</h6>
+</div>
+<div class="col-md-2">
+ <a href="{% url 'things:detail' item.id %}" class="btn btn-success">Details</a>
+</div>
+</div>
+{% endfor %}
+
+ {% for req in req_list %}
+ <div class="row">
+   <div class="col-md-4">
+     <h3>{{ req.requirement_name }}</h3>
+     <h5>{{ req.requirement_desc }}</h5>
+     <h6>{{ req.requirement_quantity }}</h6>
+   </div>
+   <div class="col-md-2">
+     <a href="{% url 'things:detaild' req.id %}" class="btn btn-success">Details</a>
+   </div>
+ </div>
+{% endfor %}
 {% endblock %}

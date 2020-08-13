@@ -166,24 +166,6 @@ height: 300px;
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-        <div class="container">
-          <button class="navbar-toggler" type="botton" data-toggle="collapse" data-target=#navbar>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand mr-auto" href="{% url 'index' %}"><img src="{% static 'images/logo.jpg' %}" height="30" width="41"></a>
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'things:about' %}"><span class="fa fa-picture-o fa-lg"></span> Gallery</a></li>
-            </ul>
-            <span class="navbar-text">
-                <a id="loginModalOpen" href="{% url 'things:user_login' %}" role="button">
-                <span class="fa fa-sign-in"></span> Login</a>
-              </span>
-          </div>
-        </div>
-      </nav>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
