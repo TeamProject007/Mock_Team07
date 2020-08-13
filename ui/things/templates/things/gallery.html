@@ -1,0 +1,245 @@
+{% extends 'things/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery_style.css' %}">
+    <style>
+      .row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content {
+    margin: 0px;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.footer {
+    background-color: black ;
+    color: azure;
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+    max-width: 100%;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background:#eb4326 ;
+    ;
+    color:floralwhite;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+.navbar{
+    background-color: black;
+}
+
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.card-header{
+    background-color:grey;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.carousel {
+    background: white;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+#carouselButton {
+    right:15px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.ngo {
+    color: #ffffff;
+    margin : 20px auto;
+    padding: 0px;
+    background-color: #E1EDED;
+    }
+
+.ngo h2{
+    text-align: center;
+    color: black;
+    }
+
+    /*figure{
+        display: inline-block;
+    }*/
+.column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+.row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+ #image img {
+        max-width: 100%;
+          height: auto;
+          width: 200px;
+        }
+
+.btn {
+    margin: auto;
+    padding: auto;
+    background-color: white;
+}
+
+#partner {
+    text-align: center;
+    }
+
+    #feedback {
+    margin: 10px;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        /*max-width: 1rem;*/
+        height: 55%;
+      }
+
+    .carousel-control-prev, .carousel-control-next{
+        bottom: 25;
+    }
+
+    h4 {
+        color: #691838;
+        font-weight: bold;
+    }
+  .main-head{
+    margin: 20px auto;
+  }
+  body{
+  background-color: #C8C8C8;
+}
+.container-img-gal{
+  max-width: 1200px;
+  margin: auto;
+  background: #f2f2f2;
+  overflow: auto;
+}
+.gallery{
+  margin:5px;
+  border:1px solid #ccc;
+  float:left;
+  width: 500px;
+}
+.gallery img{
+  width:100%;
+  height: auto;
+}
+
+    </style>
+
+    <title>U & I: Gallery</title>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+      <div class="container">
+        <button class="navbar-toggler" type="botton" data-toggle="collapse" data-target=#navbar>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="{% url 'index' %}"><img src="{% static 'images/logo.jpg' %}" height="30" width="41"></a>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}"><span class="fa fa-home fa-lg"></span> Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'things:about' %}"><span class="fa fa-picture-o fa-lg"></span> Gallery</a></li>
+          </ul>
+          <span class="navbar-text">
+              <a id="loginModalOpen" href="{% url 'things:user_login' %}" role="button">
+              <span class="fa fa-sign-in"></span> Login</a>
+            </span>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="main-head">
+        <h1>A little help, can go a long way....</h1>
+      </div>
+      <div class="container-img-gal">
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img1.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img2.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img3.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img4.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img5.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img-6.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img-7.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img-8.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img-9.jpg' %}" alt="">
+        </div>
+        <div class="gallery">
+          <img src="{% static 'images/Images_Gallery/img-10.jpg' %}" alt="">
+        </div>
+      </div>
+
+    </div>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+</body>
+{% endblock %}

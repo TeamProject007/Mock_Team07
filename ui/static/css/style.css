@@ -1,0 +1,140 @@
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content {
+    margin: 0px;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.footer {
+    background-color: black ;
+    color: azure;
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+    max-width: 100%;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background:#eb4326 ;
+    ;
+    color:floralwhite;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+.navbar{
+    background-color: black;
+}
+
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.card-header{
+    background-color:grey;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.carousel {
+    background: white;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+#carouselButton {
+    right:15px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.ngo {
+    color: #ffffff;
+    margin : 20px auto;
+    padding: 0px;
+    background-color: #E1EDED;
+    }
+
+.ngo h2{
+    text-align: center;
+    color: black;
+    }
+
+    /*figure{
+        display: inline-block;
+    }*/
+.column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+.row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+ #image img {
+        max-width: 100%;
+          height: auto;
+          width: 200px;
+        }
+
+.btn {
+    margin: auto;
+    padding: auto;
+    background-color: white;
+}
+
+#partner {
+    text-align: center;
+    }
+
+    #feedback {
+    margin: 10px;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        /*max-width: 1rem;*/
+        height: 55%;
+      }
+
+    .carousel-control-prev, .carousel-control-next{
+        bottom: 25;
+    }
+
+    h4 {
+        color: #691838;
+        font-weight: bold;
+    }
+  .main-head{
+    margin: 20px auto;
+  }

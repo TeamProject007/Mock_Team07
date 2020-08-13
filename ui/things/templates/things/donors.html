@@ -1,12 +1,5 @@
 {% extends 'things/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Donated things</title>
-
-  <body>
     {% block body %}
     {% for item in item_list %}
     <div class="row">
@@ -24,5 +17,4 @@
     </div>
     {% endfor %}
     {% endblock %}
-  </body>
-</html>
+  

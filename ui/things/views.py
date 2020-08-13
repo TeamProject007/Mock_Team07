@@ -2,11 +2,15 @@ from django.shortcuts import render,redirect
 from .forms import DonorForm,DoneeForm,ItemForm,RequirementForm
 # Create your views here.
 from .models import Item,Requirement
+from django.views.generic import TemplateView
 # Create your views here.
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+
+class GalleryView(TemplateView):
+    template_name = "things/gallery.html"
 
 def index(request):
     return render(request,'things/index.html')
@@ -89,7 +93,7 @@ def user_login(request):
             print("Username : {} and Password: {}".format(email,password))
             return HttpResponse("Invalid login details!")
     else:
-        return render(request,'things/login.html',{})
+        return render(request,'things\login.html',{})
 
 def create_item(request):
     if request.method=='POST':
@@ -102,7 +106,7 @@ def create_item(request):
     return render(request,'things/item-form.html',{'form':form})
 
 def add_item(request):
-    req_form=RequirementForm(request.POST or None)
+    req_form=RequirementForm(request.POST)
 
     if req_form.is_valid():
         req_form.save()

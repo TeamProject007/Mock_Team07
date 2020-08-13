@@ -1,6 +1,6 @@
 {% extends 'things/base.html' %}
 {% load static %}
-    {% block body %}
+{% block content %}
     {% for req in req_list %}
     <div class="row">
       <div class="col-md-4">
@@ -12,5 +12,5 @@
         <a href="{% url 'things:detaild' req.id %}" class="btn btn-success">Details</a>
       </div>
     </div>
-    {% endfor %}
-    {% endblock %}
+{% endfor %}
+{% endblock %}
